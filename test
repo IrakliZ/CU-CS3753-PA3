@@ -7,5 +7,13 @@ MAKE="make -s"
 echo "-------CPU Intensive with OTHER--------"
 for i in 1 2 3
 do
-	/usr/bin/time -f "$TIMEFORMAT" ./cpu_intensive $ITERATIONS SCHED_OTHER 20 > /dev/null
+	/usr/bin/time -f "$TIMEFORMAT" ./cpu_intensive $ITERATIONS SCHED_OTHER 10 > /dev/null
 done
+echo "----------------DONE-------------------"
+
+echo "-------IO Intensive with OTHER--------"
+for i in 1 2 3
+do
+	/usr/bin/time -f "$TIMEFORMAT" ./io_intensive $BYTESTOCOPY $BLOCKSIZE SCHED_OTHER 10 > /dev/null
+done
+echo "----------------DONE-------------------"

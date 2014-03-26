@@ -16,22 +16,22 @@ int main(int argc, char* argv[]) {
 	int i;
 	int pid;
 
-	if (argc < 3) {
+	if (argc < 4) {
 		policy = SCHED_OTHER;
 	}
 
-	if (argc < 4) {
+	if (argc < 5) {
 		forks = NUM_FORKS;
 	}
 
-	if(argc > 2){
-		if(!strcmp(argv[2], "SCHED_OTHER")){
+	if (argc > 3) {
+		if(!strcmp(argv[3], "SCHED_OTHER")){
 			policy = SCHED_OTHER;
 		}
-		else if(!strcmp(argv[2], "SCHED_FIFO")){
+		else if(!strcmp(argv[3], "SCHED_FIFO")){
 			policy = SCHED_FIFO;
 		}
-		else if(!strcmp(argv[2], "SCHED_RR")){
+		else if(!strcmp(argv[3], "SCHED_RR")){
 			policy = SCHED_RR;
 		}
 		else{
@@ -40,8 +40,8 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	if(argc > 3){
-		forks = atol(argv[3]);
+	if (argc > 4) {
+		forks = atol(argv[4]);
 		if(forks < 1){
 			fprintf(stderr, "Bad forks value\n");
 			exit(EXIT_FAILURE);
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 			exit(EXIT_FAILURE);
 		}
 		if (pid == 0) {
-			execl("pi", "pi", argv[1], NULL);
+			execl("rw", "rw", argv[1], argv[2], NULL);
 			exit(EXIT_SUCCESS);
 		} else {
 			printf("%d: pid: %d\n", i, pid);

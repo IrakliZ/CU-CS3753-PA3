@@ -12,7 +12,7 @@ INPUTBLOCKS = $(shell echo $(INPUTFILESIZEBYTES)\/$(INPUTBLOCKSIZEBYTES) | bc)
 
 .PHONY: all clean
 
-all: pi pi-sched rw rr_quantum cpu_intensive
+all: pi pi-sched rw rr_quantum cpu_intensive io_intensive
 
 pi: pi.o
 	$(CC) $(LFLAGS) $^ -o $@ -lm
@@ -21,6 +21,9 @@ pi-sched: pi-sched.o
 	$(CC) $(LFLAGS) $^ -o $@ -lm
 
 cpu_intensive: cpu_intensive.o
+	$(CC) $(LFLAGS) $^ -o $@ -lm
+
+io_intensive: io_intensive.o
 	$(CC) $(LFLAGS) $^ -o $@ -lm
 
 rw: rw.o rwinput
@@ -38,6 +41,9 @@ pi-sched.o: pi-sched.c
 cpu_intensive.o: cpu_intensive.c
 	$(CC) $(CFLAGS) $<
 
+io_intensive.o: io_intensive.c
+	$(CC) $(CFLAGS) $<
+
 rw.o: rw.c
 	$(CC) $(CFLAGS) $<
 
@@ -48,7 +54,7 @@ rr_quantum.o: rr_quantum.c
 	$(CC) $(CFLAGS) $<
 
 clean: testclean
-	rm -f pi pi-sched rw rr_quantum cpu_intensive
+	rm -f pi pi-sched rw rr_quantum cpu_intensive io_intensive
 	rm -f rwinput
 	rm -f *.o
 	rm -f *~
@@ -57,4 +63,4 @@ clean: testclean
 	rm -f handout/*.aux
 
 testclean:
-	rm -f rwoutput*
+	rm -f output/rwoutput*
