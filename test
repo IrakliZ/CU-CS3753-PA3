@@ -1,0 +1,11 @@
+ITERATIONS=100000000
+BYTESTOCOPY=102400
+BLOCKSIZE=1024
+TIMEFORMAT="wall=%e user=%U system=%S CPU=%P i-switched=%c v-switched=%w"
+MAKE="make -s"
+
+echo "-------CPU Intensive with OTHER--------"
+for i in 1 2 3
+do
+	/usr/bin/time -f "$TIMEFORMAT" ./cpu_intensive $ITERATIONS SCHED_OTHER 20 > /dev/null
+done

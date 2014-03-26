@@ -16,6 +16,9 @@
 #include <math.h>
 #include <errno.h>
 #include <sched.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
 #define DEFAULT_ITERATIONS 1000000
 #define RADIUS (RAND_MAX / 2)
@@ -73,10 +76,10 @@ int main(int argc, char* argv[]){
 	    exit(EXIT_FAILURE);
 	}
     }
-    
+
     /* Set process to max prioty for given scheduler */
     param.sched_priority = sched_get_priority_max(policy);
-    
+
     /* Set new scheduler policy */
     fprintf(stdout, "Current Scheduling Policy: %d\n", sched_getscheduler(0));
     fprintf(stdout, "Setting Scheduling Policy to: %d\n", policy);
