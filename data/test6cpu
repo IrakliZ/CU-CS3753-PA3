@@ -1,0 +1,153 @@
+
+
+----------------------SCHED_OTHER----------------------
+
+
+*******************CPU Intensive*******************
+
+FORKS: 10
+wall=0.09 user=0.47 system=0.00 CPU=516% i-switched=48 v-switched=27
+wall=0.09 user=0.45 system=0.01 CPU=488% i-switched=39 v-switched=20
+wall=0.08 user=0.44 system=0.02 CPU=522% i-switched=35 v-switched=20
+FORKS: 50
+wall=0.40 user=2.21 system=0.04 CPU=563% i-switched=560 v-switched=268
+wall=0.39 user=2.22 system=0.03 CPU=568% i-switched=617 v-switched=99
+wall=0.39 user=2.17 system=0.04 CPU=557% i-switched=558 v-switched=230
+FORKS: 200
+wall=1.58 user=8.86 system=0.14 CPU=569% i-switched=2324 v-switched=928
+wall=1.58 user=8.85 system=0.13 CPU=567% i-switched=2571 v-switched=1006
+wall=1.57 user=8.81 system=0.14 CPU=568% i-switched=2531 v-switched=925
+
+
+*******************IO Intensive*******************
+
+FORKS: 10
+wall=0.51 user=0.00 system=0.70 CPU=138% i-switched=47 v-switched=3025
+wall=0.46 user=0.00 system=0.59 CPU=126% i-switched=61 v-switched=3082
+wall=0.44 user=0.00 system=0.60 CPU=135% i-switched=61 v-switched=2768
+FORKS: 50
+wall=1.65 user=0.02 system=2.95 CPU=179% i-switched=249 v-switched=17604
+wall=1.64 user=0.02 system=3.04 CPU=186% i-switched=278 v-switched=17570
+wall=1.47 user=0.04 system=2.69 CPU=185% i-switched=272 v-switched=17046
+FORKS: 200
+wall=4.20 user=0.13 system=8.20 CPU=198% i-switched=811 v-switched=72073
+wall=4.49 user=0.17 system=9.21 CPU=208% i-switched=1060 v-switched=70820
+wall=4.40 user=0.08 system=9.27 CPU=212% i-switched=992 v-switched=70960
+
+
+*******************NON Intensive*******************
+
+FORKS: 10
+wall=0.40 user=0.54 system=0.43 CPU=241% i-switched=225 v-switched=2966
+wall=0.41 user=0.60 system=0.36 CPU=231% i-switched=195 v-switched=2922
+wall=0.42 user=0.48 system=0.48 CPU=231% i-switched=187 v-switched=2904
+FORKS: 50
+wall=1.17 user=2.43 system=1.63 CPU=346% i-switched=1081 v-switched=15106
+wall=1.28 user=2.54 system=1.74 CPU=334% i-switched=1140 v-switched=14963
+wall=1.26 user=2.37 system=1.80 CPU=330% i-switched=1171 v-switched=15365
+FORKS: 200
+wall=3.88 user=10.05 system=5.68 CPU=405% i-switched=3677 v-switched=65767
+wall=4.45 user=9.61 system=5.81 CPU=346% i-switched=5174 v-switched=67343
+wall=4.69 user=10.17 system=5.54 CPU=334% i-switched=4563 v-switched=66711
+
+
+----------------------SCHED_FIFO----------------------
+
+
+*******************CPU Intensive*******************
+
+FORKS: 10
+wall=0.26 user=0.36 system=0.00 CPU=138% i-switched=1 v-switched=13
+wall=0.35 user=0.32 system=0.00 CPU=94% i-switched=1 v-switched=12
+wall=0.20 user=0.43 system=0.00 CPU=212% i-switched=1 v-switched=17
+FORKS: 50
+wall=1.77 user=1.64 system=0.03 CPU=94% i-switched=1 v-switched=52
+wall=1.68 user=1.55 system=0.04 CPU=95% i-switched=1 v-switched=52
+wall=0.75 user=2.04 system=0.02 CPU=273% i-switched=1 v-switched=57
+FORKS: 200
+wall=4.41 user=7.44 system=0.09 CPU=170% i-switched=1 v-switched=208
+wall=4.04 user=7.28 system=0.11 CPU=183% i-switched=1 v-switched=207
+wall=4.05 user=7.57 system=0.10 CPU=189% i-switched=1 v-switched=207
+
+
+*******************IO Intensive*******************
+
+FORKS: 10
+wall=0.31 user=0.01 system=0.08 CPU=32% i-switched=1 v-switched=2994
+wall=0.18 user=0.01 system=0.03 CPU=24% i-switched=1 v-switched=2014
+wall=0.17 user=0.00 system=0.03 CPU=24% i-switched=1 v-switched=2013
+FORKS: 50
+wall=0.64 user=0.06 system=0.14 CPU=30% i-switched=1 v-switched=10270
+wall=0.74 user=0.05 system=0.14 CPU=26% i-switched=1 v-switched=10318
+wall=0.77 user=0.03 system=0.16 CPU=25% i-switched=1 v-switched=10252
+FORKS: 200
+wall=2.72 user=0.09 system=2.14 CPU=81% i-switched=1 v-switched=58772
+wall=2.29 user=0.21 system=1.01 CPU=53% i-switched=0 v-switched=50685
+wall=3.73 user=0.15 system=1.70 CPU=49% i-switched=1 v-switched=60617
+
+
+*******************NON Intensive*******************
+
+FORKS: 10
+wall=0.53 user=0.12 system=0.37 CPU=93% i-switched=1 v-switched=2020
+wall=0.48 user=0.15 system=0.21 CPU=77% i-switched=1 v-switched=2012
+wall=0.49 user=0.13 system=0.25 CPU=77% i-switched=1 v-switched=2036
+FORKS: 50
+wall=2.06 user=0.70 system=1.16 CPU=90% i-switched=1 v-switched=11992
+wall=1.97 user=0.72 system=1.12 CPU=93% i-switched=1 v-switched=11966
+wall=1.98 user=0.84 system=1.02 CPU=94% i-switched=1 v-switched=12091
+FORKS: 200
+wall=3.76 user=5.73 system=3.30 CPU=239% i-switched=1 v-switched=60357
+wall=4.27 user=7.89 system=4.44 CPU=288% i-switched=1 v-switched=61707
+wall=6.62 user=6.31 system=6.40 CPU=191% i-switched=1 v-switched=53417
+
+
+----------------------SCHED_RR----------------------
+
+
+*******************CPU Intensive*******************
+
+FORKS: 10
+wall=0.33 user=0.30 system=0.01 CPU=93% i-switched=1 v-switched=12
+wall=0.32 user=0.30 system=0.00 CPU=93% i-switched=1 v-switched=12
+wall=0.33 user=0.30 system=0.00 CPU=93% i-switched=1 v-switched=12
+FORKS: 50
+wall=0.65 user=2.07 system=0.01 CPU=317% i-switched=1 v-switched=56
+wall=1.66 user=1.54 system=0.03 CPU=94% i-switched=1 v-switched=52
+wall=1.67 user=1.54 system=0.03 CPU=94% i-switched=1 v-switched=52
+FORKS: 200
+wall=1.82 user=8.72 system=0.12 CPU=485% i-switched=1 v-switched=207
+wall=3.50 user=7.89 system=0.10 CPU=228% i-switched=1 v-switched=207
+wall=3.87 user=7.66 system=0.13 CPU=201% i-switched=1 v-switched=215
+
+
+*******************IO Intensive*******************
+
+FORKS: 10
+wall=0.26 user=0.00 system=0.09 CPU=38% i-switched=1 v-switched=2969
+wall=0.16 user=0.01 system=0.02 CPU=23% i-switched=1 v-switched=2015
+wall=0.30 user=0.00 system=0.09 CPU=32% i-switched=1 v-switched=2960
+FORKS: 50
+wall=0.71 user=0.05 system=0.14 CPU=27% i-switched=1 v-switched=10263
+wall=0.75 user=0.06 system=0.14 CPU=27% i-switched=1 v-switched=10054
+wall=0.75 user=0.04 system=0.16 CPU=26% i-switched=1 v-switched=10243
+FORKS: 200
+wall=2.95 user=0.15 system=2.55 CPU=91% i-switched=1 v-switched=60260
+wall=2.64 user=0.23 system=0.91 CPU=43% i-switched=1 v-switched=53339
+wall=2.63 user=0.25 system=0.58 CPU=31% i-switched=1 v-switched=54040
+
+
+*******************NON Intensive*******************
+
+FORKS: 10
+wall=0.46 user=0.09 system=0.27 CPU=79% i-switched=1 v-switched=2012
+wall=0.47 user=0.13 system=0.23 CPU=79% i-switched=1 v-switched=2012
+wall=0.48 user=0.12 system=0.25 CPU=77% i-switched=1 v-switched=2036
+FORKS: 50
+wall=1.61 user=1.04 system=1.28 CPU=143% i-switched=1 v-switched=12935
+wall=1.44 user=1.66 system=1.13 CPU=193% i-switched=1 v-switched=13618
+wall=2.08 user=0.67 system=1.17 CPU=88% i-switched=1 v-switched=12030
+FORKS: 200
+wall=4.54 user=7.60 system=5.48 CPU=288% i-switched=5 v-switched=59841
+wall=3.79 user=7.90 system=4.80 CPU=334% i-switched=7 v-switched=63521
+wall=4.54 user=8.12 system=5.28 CPU=295% i-switched=7 v-switched=59652
