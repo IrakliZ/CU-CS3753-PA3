@@ -42,6 +42,7 @@ int main(int argc, char* argv[]) {
 		process_iter = PROC_ITERATIONS;
 	} else {
 		process_iter = atol(argv[1]);
+		printf("%d\n", process_iter);
 		if(process_iter < 1){
 			fprintf(stderr, "Bad overall iterations value\n");
 			exit(EXIT_FAILURE);

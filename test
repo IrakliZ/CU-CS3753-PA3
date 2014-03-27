@@ -1,19 +1,63 @@
 ITERATIONS=100000000
 BYTESTOCOPY=102400
 BLOCKSIZE=1024
+MIXTOTAL=100
+MIXITERATIONS=1000000
 TIMEFORMAT="wall=%e user=%U system=%S CPU=%P i-switched=%c v-switched=%w"
 MAKE="make -s"
 
-echo "-------CPU Intensive with OTHER--------"
-for i in 1 2 3
-do
-	/usr/bin/time -f "$TIMEFORMAT" ./cpu_intensive $ITERATIONS SCHED_OTHER 10 > /dev/null
-done
-echo "----------------DONE-------------------"
+# echo "-------CPU Intensive with OTHER--------"
+# for i in 1 2 3
+# do
+# 	/usr/bin/time -f "$TIMEFORMAT" ./cpu_intensive $ITERATIONS SCHED_OTHER 10 > /dev/null
+# done
+# echo "----------------DONE-------------------"
 
-echo "-------IO Intensive with OTHER--------"
-for i in 1 2 3
+# echo "-------IO Intensive with OTHER--------"
+# for i in 1 2 3
+# do
+# 	/usr/bin/time -f "$TIMEFORMAT" ./io_intensive $BYTESTOCOPY $BLOCKSIZE SCHED_OTHER 10 > /dev/null
+# done
+# echo "----------------DONE-------------------"
+
+# echo "-------Non Intensive with OTHER--------"
+# for i in 1 2 3
+# do
+# 	/usr/bin/time -f "$TIMEFORMAT" ./non_intensive $MIXTOTAL $MIXITERATIONS SCHED_OTHER 10 > /dev/null
+# done
+# echo "----------------DONE-------------------"
+
+for sched in SCHED_OTHER SCHED_FIFO SCHED_RR
 do
-	/usr/bin/time -f "$TIMEFORMAT" ./io_intensive $BYTESTOCOPY $BLOCKSIZE SCHED_OTHER 10 > /dev/null
+	echo "\n\n----------------------"$sched"----------------------\n\n"
+
+	echo "*******************CPU Intensive*******************\n"
+	for forks in 10 50 200
+	do
+		echo "FORKS: "$forks
+		for i in 1 2 3
+		do
+			/usr/bin/time -f "$TIMEFORMAT" ./cpu_intensive $ITERATIONS $sched $forks > /dev/null
+		done
+	done
+
+	echo "\n\n*******************IO Intensive*******************\n"
+	for forks in 10 50 200
+	do
+		echo "FORKS: "$forks
+		for i in 1 2 3
+		do
+			/usr/bin/time -f "$TIMEFORMAT" ./io_intensive $BYTESTOCOPY $BLOCKSIZE $sched $forks > /dev/null
+		done
+	done
+
+	echo "\n\n*******************NON Intensive*******************\n"
+	for forks in 10 50 200
+	do
+		echo "FORKS: "$forks
+		for i in 1 2 3
+		do
+			/usr/bin/time -f "$TIMEFORMAT" ./non_intensive $MIXTOTAL $MIXITERATIONS $sched $forks > /dev/null
+		done
+	done
 done
-echo "----------------DONE-------------------"
